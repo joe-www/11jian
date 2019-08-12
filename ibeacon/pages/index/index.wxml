@@ -1,0 +1,104 @@
+<!--page one  start  -->
+<view class="main" wx:if="{{main_show}}">
+  <!--商家区域  -->
+  <view class="container">
+    <view class="business_name">{{shopinfo.name}}</view>
+    <view class="business_address">
+      <text>地址：{{shopinfo.address}}</text>
+      <text>电话：{{shopinfo.telphone}}</text>
+      <text>开业时间：{{shopinfo.starttime}}</text>
+    </view>
+  </view>
+
+  <!--滚动区域  -->
+  <form  report-submit="true">
+    <view class="nav-wrap" bindtap="navBtn">
+      <button class="nav_left {{navid == 1 ? 'navactive':'noactive'}}" data-id="1" formType="submit">未使用({{nouse>100?"99+":nouse}})</button>
+      <button class="nav_center  {{navid == 2 ? 'navactive':'noactive'}}" data-id="2" formType="submit">已使用({{used>100?"99+":used}})</button>
+      <button class="nav_right  {{navid == 3 ? 'navactive':'noactive'}}" data-id="3" formType="submit">已过期({{expired>100?"99+":expired}})</button>
+
+    </view>
+  </form>
+  <!--优惠券区域  -->
+  <scroll-view  scroll-y='true' style="width:100%;height:60%;position: relative;" data-in="{{navid}}" bindscrolltolower="getCouponMore" lower-threshold enable-back-to-top="true">
+    
+    <!--优惠券列表  -->
+    <view class="coupon_wrap" wx:for="{{couponList}}" wx:key="cplist" wx:if="{{couponList.length !==0}}">
+      <view class="coupon_img">
+        <image src="../../images/coupon@default.png" ></image>
+      </view>
+      <view class="coupon_body">
+        <text>{{item.info}}</text>
+        <text>{{item.title}}</text>
+      </view>
+      <form  report-submit="true">
+        <button class="coupon_btn" wx:if="{{navid==1}}" hover-class="coupon_btn_active" bindtap="usedBtn" data-id="{{index}}" data-couponid="{{item.id}}"  formType="submit">查看</button>
+        <button class="coupon_btn" wx:else disabled hover-class="coupon_btn_active"   formType="submit">无效</button>
+      </form>
+    </view>
+     <!-- 没有更多 -->
+ <view class="none_more_wrap" wx:if="{{couponList.length !==0}}">
+    {{getMoreText}}
+ </view>
+    <!--暂无数据  -->
+    <view class="coupon_none" wx:if="{{couponList.length ==0}}">
+      <image src="../../images/none-data.png"></image>
+      <text>还没有优惠券哦</text>
+    </view>
+  </scroll-view>
+
+  <!--买单  -->
+  <form  report-submit="true">
+    <view class="buy_btn_wrap">
+      <button class="buy_btn" type="primary" bindtap="gopay" formType="submit">去买单</button>
+    </view>
+  </form>
+</view>
+<!--page one end  -->
+
+<!--查看 page two start  -->
+<view class="look_coupon_wrap" wx:if="{{!main_show}}" >
+  <view class="look_container">
+    <view class="look_img">
+      <image src="../../images/coupon@big.png"></image>
+    </view>
+    <view class="look_title">
+      <text>{{couponMore.title}}</text>
+      <form  report-submit="true">
+        <button type="primary" size="mini" bindtap="nowUsed" data-type="click" data-id="{{couponMore.id}}" data-full="{{couponMore.full}}" data-reduce="{{couponMore.reduce}}" data-couponid="{{couponMore.couponid}}"  formType="submit">立即使用</button>
+      </form>
+
+    </view>
+    <scroll-view scroll-y='true' style="height:500rpx;margin-top:20rpx">
+      <view class="look_content">
+        <text>可用时间：{{couponMore.time}}</text>
+        <text>优惠说明：{{couponMore.explain}}</text>
+        <text>使用须知：{{couponMore.des}}</text>
+      </view>
+    </scroll-view>
+
+  </view>
+
+  <view class="look_close">
+    <form  report-submit="true">
+      <button class="close_btn" size="mini" data-type="click" bindtap="closeBtn" formType="submit">
+            <icon type="clear" color="#fff" size="36" />
+        </button>
+    </form>
+
+  </view>
+</view>
+
+ <view class="haveNoneShop" wx:if="{{noneSeller}}">
+  <image src="../../images/none@seller.png"></image>
+  <text>附近暂无商家</text>
+  <text>(可能蓝牙没有开启哦)</text>
+</view> 
+
+
+<!--page two end  -->
+<!-- 
+<form   report-submit="true">
+  <button formType="submit" bindtap="btnSubmit">Submit</button>
+  <button formType="reset">Reset</button>
+</form> -->

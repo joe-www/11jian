@@ -1,0 +1,109 @@
+<view class="" wx:if="{{!phone_show}}">
+<view class="pay_container">
+  <view class="pay_money_all">
+    <text>消费总额：</text>
+    <form bindsubmit="formSubmit"  report-submit="true">
+        <input type="digit" placeholder="询问店员后输入" bindblur="payAllIpt" formType="submit" value="{{payAllVal}}"/>
+    </form> 
+    
+  </view>
+  <view class="pay_money_chose">
+      <view class="classname">不参与优惠</view>
+      <form bindsubmit="formSubmit"  report-submit="true">
+       <switch checked="{{iswitchShow}}"  bindchange="switchChange" type="switch"/>
+      </form> 
+  </view>
+  <view class="pay_chose_money" wx:if="{{iswitchShow}}">
+      <text>不参与优惠金额：</text>
+      <input type="digit" placeholder="询问店员后输入" bindblur="payChoseIpt" value="{{payChoseVal}}"/>
+  </view>
+
+</view>
+<!--  -->
+<view class="pay_more_chose">
+  <form bindsubmit="formSubmit"  report-submit="true">
+       <button class="chose_coupon_button" disabled="{{choseDisCoupon}}" formType="submit" bindtap="choseCoupon" hover-class="chose_coupon_btn_hover">
+          <view class="pay_chose_wrap_start" >
+            <view class="pay_chose_start_left">现金券/优惠券</view>
+            <view class="pay_chose_start_right">
+              <text class="pay_chose_coupon_title">{{choseCouponTitle}}</text>
+              <image src="../../images/right@2x.png"></image>
+            </view>
+          </view>
+       </button>
+  </form>
+  
+  <view class="pay_chose_wrap_end">
+    <view class="pay_chose_end_left">实付金额</view>
+    <view class="pay_chose_end_right">¥{{endprice}}</view>
+  </view>
+</view>
+
+<!--手机号  -->
+<view class="pay_container" wx:if="{{isTelShow}}">
+  <view class="pay_money_all">
+    <text>手机号：</text>
+    <input type="number" placeholder="您的手机号" placeholder-style="color:#a6a6a6" maxlength="11" bindinput="telinput" bindblur="telblur" class="tel_input" value="{{telnumber}}" />
+ 
+    <button  class="telcode" formType="submit"  disabled="{{iscode}}" bindtap="getcode" hover-class="chose_coupon_btn_hover">{{codeText}}</button>
+
+  </view>
+
+  <view class="pay_money_all codeTel">
+    <text>验证码：</text>
+    <input type="number" placeholder-style="color:#a6a6a6" maxlength="6" bindinput="codeinput" bindtap="codeclick" disabled="{{codedis}}" value="{{codenumber}}"/>
+  </view>
+
+</view>
+
+<!--一键获取手机  -->
+<view class="getPhoneNumber_wrap" wx:if="{{isTelStepOneShow}}">
+  <view class="get_wx_phone">
+    <icon type="success"  size="23"/>
+    <text>微信授权手机号码：</text>
+    <text>{{wxPhoneNumber}}</text>
+  </view>
+</view>
+
+
+
+<view class="classname">
+  <button type="default" class="go_buy" open-type="getPhoneNumber" disabled="{{isGetWxNo}}" bindgetphonenumber="getPhoneNumber">
+    <image wx:if="{{isGetWxNo==true}}" src="../../images/wechat_icon_dis.png" ></image>
+    <image wx:else src="../../images/wechat_icon.png" ></image>
+    <text>一键授权手机号</text>
+  </button>
+</view>
+
+<!--去买单  -->
+<form bindsubmit="formSubmit"  report-submit="true">
+  <button class="go_buy" type="primary" bindtap="goBuy" disabled="{{isstar}}" loading="{{loading}}"  formType="submit">我要付款</button>
+</form>
+
+<!--tips  -->
+  <view class="tips_wrap">
+    <text>tips：先要验证手机号才能付款哦</text>
+  </view>
+</view>
+
+<!--手机验证  -->
+<!-- <view class="login-wrap" wx:if="{{phone_show}}">
+  <view class="login-bd">
+    <view class="login-tel">
+      <input type="number" placeholder="请输入手机号码" placeholder-style="color:#a6a6a6" maxlength="11" bindinput="telinput" bindblur="telblur" value="{{telnumber}}" />
+      <icon type="clear" wx:if="{{ShowClear}}" bindtap="clearBtn" />
+    </view>
+    <view class="login-code-bd">
+      <input type="number" placeholder="请输入验证码" placeholder-style="color:#a6a6a6" maxlength="4" bindinput="codeinput" bindtap="codeclick" disabled="{{codedis}}" value="{{codenumber}}"/>
+      <button class="code" disabled="{{iscode}}" bindtap="getcode"  hover-class="codestyle">{{codeText}}</button>
+    </view>
+    <view>
+    <button class="start" disabled="{{isstar}}" loading="{{loading}}" bindtap="gostart" hover-class="startstyle">提交</button>
+  </view>
+  <view class="look_close">
+    <icon type="clear" color="#fff" size="36" bindtap="closeBtn"/>
+  </view>
+  </view>
+  
+</view> -->
+

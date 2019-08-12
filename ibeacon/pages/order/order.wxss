@@ -1,0 +1,31 @@
+@import '../index/index.wxss';
+.coupon_wrap{
+  margin-top: 10px;
+}
+.coupon_body{
+  height:180rpx;
+  align-items:flex-end;
+  justify-content:center;
+
+}
+.coupon_img{
+  font-size:30rpx;
+  color:#515151;
+}
+.coupon_img text{
+  display: block;
+  white-space:nowrap;
+}
+.coupon_body text{
+  color:#515151;
+  font-size:30rpx;
+  padding:3rpx;
+}
+
+/* .coupon_body .text1{
+  font-size:17px;
+  padding-top: 25px;
+} */
+.coupon_body .red{
+  color:red;
+}

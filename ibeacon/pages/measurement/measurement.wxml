@@ -1,0 +1,20 @@
+<!--pages/measurement/measurement.wxml-->
+<form bindsubmit="formSubmit">
+<radio-group bindchange="radioChange" class="sexchoose">
+  <text>请选择性别：</text>
+  <label class="radio" wx:for="{{items}}">
+    <radio value="{{item.value}}" disabled='disabled' name="sex" checked="{{item.checked}}"/>{{item.name}}
+  </label>
+</radio-group>
+<view class='body_container'>
+  
+<view class="body_item" wx:for="{{bodylist}}"  wx:if="{{bodylist.length !==0}}">
+      <text>{{item.attr_name}}</text>
+      <input type="digit"  placeholder="" disabled='disabled'  value="{{item.attr_value}}"/> 
+</view>
+
+</view>
+<!-- <button form-type='submit' type='primary' class='save_btn'>保存</button> -->
+</form>
+
+

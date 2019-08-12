@@ -1,0 +1,368 @@
+.pay_container {
+    width: 750rpx;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0rpx auto 20rpx;
+    font-size: 30rpx;
+}
+
+.pay_money_all,
+.pay_money_chose {
+    height: 80rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+    margin: 40rpx 0 0;
+}
+
+.pay_money_chose {
+    justify-content: space-between;
+    margin-bottom: 0;
+    position: relative;
+}
+
+.switch_button {
+    background: transparent;
+    width: 100rpx;
+    height: 80rpx;
+    position: absolute;
+    top: 0;
+    right: 20rpx;
+    z-index: 50;
+}
+
+.pay_chose_money input {
+    width: 450rpx;
+}
+
+.pay_money_all input {
+    width: 550rpx;
+}
+
+.pay_money_chose::after,
+.pay_chose_wrap_start::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 20rpx;
+    width: 730rpx;
+    height: 2rpx;
+    background-color: #efefef;
+}
+
+.pay_chose_money {
+    height: 80rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    animation: bounceInDown 0.5s ease-in;
+}
+
+@keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -80rpx, 0);
+    }
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25rpx, 0);
+    }
+    75% {
+        transform: translate3d(0, -10rpx, 0);
+    }
+    90% {
+        transform: translate3d(0, 5rpx, 0);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.pay_more_chose {
+    width: 750rpx;
+    margin-top: 40rpx;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.pay_chose_wrap_start,
+.pay_chose_wrap_end {
+    height: 80rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+    position: relative;
+    font-size: 30rpx;
+}
+
+.chose_coupon_btn_hover {
+    background-color: #cccccc;
+    opacity: 0.3;
+}
+
+.pay_chose_start_left,
+.pay_chose_start_right {
+    flex: 1;
+}
+
+.pay_chose_start_right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}
+
+.pay_chose_start_right image {
+    width: 26rpx;
+    height: 43rpx;
+    padding-left: 20rpx;
+}
+
+.pay_chose_coupon_title {
+    color: #ff5252;
+}
+
+.pay_chose_end_right {
+    color: #fc0a1a;
+    font-size: 40rpx;
+}
+
+.chose_coupon_button {
+    background: transparent;
+    width: 750rpx;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    border-radius: 0;
+}
+
+.chose_coupon_button::after {
+    content: '';
+    border: none;
+}
+
+
+/* 手机验证 */
+
+.pay_money_all .tel_input {
+    width: 360rpx;
+}
+
+.pay_money_all .telcode {
+    flex: 2;
+    width: 200rpx;
+    height: 80rpx;
+    font-size: 26rpx;
+    line-height: 80rpx;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+    color: #333;
+    text-align: center;
+    border-left: 2rpx solid #efefef;
+}
+
+.pay_money_all .telcode[disabled] {
+    background-color: #ffffff;
+}
+
+.pay_money_all .telcode::after {
+    content: "";
+    border: none;
+}
+
+.pay_container .codeTel {
+    margin-top: 0;
+    position: relative;
+}
+
+.pay_container .codeTel::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20rpx;
+    width: 730rpx;
+    height: 2rpx;
+    background-color: #efefef;
+}
+
+
+/* 一键授权手机 */
+
+.getPhoneNumber_wrap {
+    width: 750rpx;
+    height: 80rpx;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+}
+
+.get_wx_phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.get_wx_phone icon {
+    padding-right: 10rpx;
+}
+
+.get_wx_phone text:last-child {
+    color: #1AAD19;
+}
+
+
+/* 去买单 */
+
+.go_buy {
+    width: 710rpx;
+    margin: 50rpx auto 0;
+    
+}
+
+.go_buy image{
+   width: 48rpx;height: 48rpx;
+   padding-right: 10rpx;
+   vertical-align: middle;
+}
+
+/* 手机验证 */
+
+.login-wrap {
+    width: 750rpx;
+    height: 100%;
+    background-color: #333333;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+
+/*手机号*/
+
+.login-bd {
+    width: 710rpx;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: center;*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-tel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f2f2f2
+}
+
+.login-tel input {
+    flex: 8;
+    height: 88rpx;
+    padding-left: 40rpx;
+    line-height: 88rpx;
+    font-size: 34rpx;
+}
+
+.login-tel icon {
+    flex: 2;
+    text-align: center;
+}
+
+.login-tel {
+    margin-bottom: 20rpx;
+}
+
+
+/*验证码*/
+
+.login-code-bd {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-code-bd input {
+    flex: 6;
+    width: 470rpx;
+    height: 88rpx;
+    padding: 0 40rpx;
+    line-height: 88rpx;
+    background-color: #f2f2f2;
+    font-size: 34rpx;
+}
+
+.code {
+    flex: 4;
+    width: 220rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin-left: 20rpx;
+    background-color: #e67d0a;
+    color: #fefefe;
+    font-size: 30rpx;
+}
+
+.codestyle {
+    background-color: #e89841;
+}
+
+
+/*开始*/
+
+.start {
+    width: 710rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    margin: 40rpx auto 10rpx;
+    background-color: #e67d0a;
+    color: #fefefe;
+    font-size: 34rpx;
+}
+
+.startstyle {
+    background-color: #e89841
+}
+
+.look_close {
+    margin: 0 auto;
+    padding-top: 100rpx;
+    display: flex;
+    justify-content: center;
+}
+
+/*tips  */
+.tips_wrap{
+  width: 750rpx;
+  margin: 20rpx auto;
+  text-align: center;
+}
+.tips_wrap text{
+  color: #999;
+  opacity: 0.8;
+  font-size: 12px;
+}

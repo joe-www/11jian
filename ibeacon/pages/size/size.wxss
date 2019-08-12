@@ -1,0 +1,4 @@
+@import '../index/index.wxss';
+.coupon_wrap{
+  margin-top: 10px;
+}

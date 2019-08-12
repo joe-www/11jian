@@ -1,0 +1,278 @@
+.main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0
+}
+
+.container {
+    width: 750rpx;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 26rpx;
+    margin: 0 auto;
+    /* border-radius: 10rpx; */
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+
+.business_name {
+    font-size: 34rpx;
+    font-weight: 600;
+    padding-bottom: 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.business_address {
+    display: flex;
+    flex-direction: column;
+}
+
+.business_address text {
+    padding: 5rpx 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* nav bar */
+
+.nav-wrap {
+    width: 750rpx;
+    height: 80rpx;
+    background-color: #ffffff;
+    margin: 20rpx auto 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 30rpx;
+    border-bottom: 2rpx solid #efefef;
+}
+
+.nav-wrap button {
+    background-color: transparent;
+    font-size: 26rpx;
+    border: none;
+    border-radius: 0;
+}
+
+.nav-wrap button::after {
+    content: '';
+    border: none;
+}
+
+.navactive {
+    color: #1ca51a;
+}
+
+
+/*coupon scroll */
+
+
+/* 暂无数据 */
+
+.coupon_none {
+    width: 750rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.coupon_none image {
+    width: 188rpx;
+    height: 188rpx;
+}
+
+.coupon_none text {
+    font-size: 26rpx;
+    color: #ccc;
+}
+
+.coupon_wrap {
+    width: 750rpx;
+    height: 180rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    background-color: #ffffff;
+}
+ .coupon_wrap + .coupon_wrap {
+   margin-top: 20rpx;
+} 
+.coupon_wrap:nth-child(2n){
+  background-color: #F9FAFC;
+}
+.coupon_img {
+    flex: 2;
+    width: 260rpx;
+    height: 160rpx;
+}
+
+.coupon_img image {
+    width: 100%;
+    height: 100%;
+}
+
+.coupon_body {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coupon_body text {
+    padding: 20rpx 0;
+    font-size: 26rpx;
+}
+
+.coupon_btn {
+    background-color: #169bd5;
+    color: #ffffff;
+}
+
+.coupon_btn_active {
+    background-color: #169bd5;
+    opacity: 0.8;
+}
+
+
+/* 买单 */
+
+.buy_btn_wrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 150rpx;
+    background-color: #ffffff;
+    border-top: 2rpx solid #efefef;
+}
+
+.buy_btn {
+    width: 710rpx;
+    box-sizing: border-box;
+    padding: 0 20rpx;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+
+/* 查看 */
+
+.look_coupon_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333333;
+    box-sizing: border-box;
+}
+
+.look_container {
+    width: 710rpx;
+    height: 1000rpx;
+    margin: 30rpx auto;
+    background-color: #ffffff;
+    border-radius: 10rpx;
+}
+
+.look_img {
+    width: 710rpx;
+    height: 280rpx;
+}
+
+.look_img image {
+    width: 100%;
+    height: 100%;
+}
+
+.look_title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.look_title text {
+    font-size: 36rpx;
+    font-weight: 600;
+    padding: 20rpx;
+}
+
+.look_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20rpx;
+}
+
+.look_content text {
+    padding: 10rpx 0;
+}
+
+
+/*关闭  */
+
+.look_close {
+    width: 750rpx;
+    margin: 0 auto;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: center;
+}
+
+.close_btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+}
+
+.close_btn::after {
+    content: "";
+    border: none;
+}
+
+/*没有更多  */
+.none_more_wrap{
+  width: 750rpx;
+  height: 100rpx;
+  color: #999;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+/*没有商家  */
+.haveNoneShop{
+  width: 100%;height: 100%;
+  position: absolute;
+  left: 0;top: 0;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.haveNoneShop image{
+  width: 133rpx;
+  height: 128rpx;
+  padding-bottom: 10rpx;
+}
+.haveNoneShop text{
+    font-size: 36rpx;
+    color: #999;
+}
+
+.haveNoneShop text:last-child{
+  font-size: 24rpx;
+}

@@ -1,0 +1,14 @@
+
+<!--尺码  -->
+  <view class="coupon_wrap" wx:for="{{sizelist}}"  wx:if="{{sizelist.length !==0}}">
+      <view class="coupon_body">
+        <text>尺码类型：{{item.sizetype}}</text>
+        <text>尺码：{{item.size}}</text>
+      </view>
+    </view>
+
+ <!--暂无数据  -->
+    <view class="coupon_none" wx:if="{{sizelist.length ==0}}">
+      <image src="../../images/none-data.png"></image>
+      <text>还没有尺码信息</text>
+    </view>

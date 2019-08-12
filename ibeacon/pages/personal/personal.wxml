@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+       <text class="userinfo-nickname">{{userInfo.nickName}}</text> 
+    </block>
+  </view>
+  <view class="usermotto">
+      <button class="chose_button" bindtap="gomeasurement" hover-class="chose_btn_hover">
+          <view class="measurement_chose_wrap_start" >
+            <view class="measurement_chose_start_left">身形管理</view>
+            <view class="measurement_chose_start_right">
+              <image src="../../images/right@2x.png"></image>
+            </view>
+          </view>
+       </button>
+       <button class="chose_button"  bindtap="gosize" hover-class="chose_btn_hover">
+          <view class="measurement_chose_wrap_start" >
+            <view class="measurement_chose_start_left">尺寸管理</view>
+            <view class="measurement_chose_start_right">
+              <image src="../../images/right@2x.png"></image>
+            </view>
+          </view>
+       </button>
+       <button class="chose_button"   bindtap="goorder"  hover-class="chose_btn_hover">
+          <view class="measurement_chose_wrap_start" >
+            <view class="measurement_chose_start_left">订单管理</view>
+            <view class="measurement_chose_start_right">
+              <image src="../../images/right@2x.png"></image>
+            </view>
+          </view>
+       </button>
+     
+  </view>
+</view>
